@@ -67,6 +67,9 @@ includeheadfoot
 \RequirePackage[T1]{fontenc}
 \RequirePackage[utf8]{inputenc}
 
+% natural deduction proofs
+\RequirePackage{logicproof}
+
 % =====
 % hacks
 % =====
@@ -99,13 +102,11 @@ includeheadfoot
 \DeclareMathOperator{\Re}{Re}
 \DeclareMathOperator{\Im}{Im}
 
-% boolean logic and and or
-\newcommand{\and}{\wedge}
-\newcommand{\or}{\vee}
-
 % boolean logic turnstile
 \newcommand{\turnstile}{\vdash}
 \newcommand{\derives}{\turnstile}
+\newcommand{\Turnstile}{\vDash}
+\newcommand{\Derives}{\Turnstile}
 
 % -----------------
 % metadata commands
