@@ -118,8 +118,11 @@ includeheadfoot
 % pset-specific environments
 % --------------------------
 
-\newenvironment{solution}{}{\newpage}
-\newenvironment{problem}[2]{\section*{Chapter #1: Problem #2}}{\par\hrulefill}
+% solution boxes
+\newenvironment{solution}{\begin{mdframed}}{\end{mdframed}}
+
+% textbook-style problems; suspect we might never use this
+%\newenvironment{problem}[2]{\section*{Chapter #1: Problem #2}}{\par\hrulefill}
 
 % ====================
 % page layout/metadata
@@ -137,5 +140,3 @@ includeheadfoot
 \pagestyle{cs81}
 
 
-% enumerate layout
-\setenumerate[0]{label=(\alph*)}
