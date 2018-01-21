@@ -8,41 +8,98 @@
 
 \begin{enumerate}
 \item Prove constructively:
-  \(A \and (B \or C) \derives (A \and B) \or (A \and C)\)
+  \(A \land (B \lor C) \derives (A \land B) \lor (A \land C)\)
 
+  \begin{solution}
+  \end{solution}
+  
 \item Prove constructively: \(B \to A \derives (A \to C) \to (B \to C)\)
+
+  \begin{solution}
+  \end{solution}
+  
 \item Prove constructively: \(A \to \neg B \derives B \to \neg A\)
-
-
-
-\item    Prove constructively: ¬¬¬A ⊢ ¬A
-\item    Prove constructively: A→¬A ⊢ ¬A
-
-\item    Prove classically: ¬A→A ⊢ A
-
-\item    Prove classically: ¬(¬A ∧ ¬B) ⊢ A ∨ B
-\item    Prove constructively: A∨B ⊢ ¬(¬A ∧ ¬B)
-
-\item Note that the problems 7 and 8 are converses of each other.  How does this tell us that ∨ Introduction cannot be used as the last step of the proof of ¬(¬A ∧ ¬B) ⊢ A ∨ B?
-\item  Use propositional logic to prove this set-theoretic inclusion: 
-  If A ⊆ C and B ⊆ C then A⋃B ⊆ C
-\item Use propositional logic to prove this set-theoretic identity: 
-
-  A ⋂ (B ⋃ C) = (A ⋂ B) ⋃ (A ⋂ C)
-
-\item State, in your own words, the difference in meanings of 𝚪 ⊢ A vs. 𝚪 ⊨A, where 𝚪 is a set of statements and A is a statement.
-
-\item Using a truth table, determine whether or not 
-
-  (A → B)→C ⊨ (A ∧ B)→C
-\item Show that, in classical logic, 
-  𝚪 ⊢ A if, and only if, 𝚪 ⋃ {¬A} ⊢ ⊥
-
-\item Show that, in classical logic, 
-  𝚪 ⊨ A if, and only if, 𝚪 ⋃ {¬A} ⊨ ⊥
-
+  
+  \begin{solution}
+  \end{solution}
+  
+\item Prove constructively: \(\neg \neg \neg A \derives \neg A\)
+  
+  \begin{solution}
+  \end{solution}
+  
+\item Prove constructively: \(A \to \neg A \derives \neg A\)
+  
+  \begin{solution}
+  \end{solution}
+  
+\item Prove classically: \(\neg A \to A \derives A\)
+  
+  \begin{solution}
+  \end{solution}
+  
+\item Prove classically: \(\neg (\neg A \land \neg B) \derives A \lor B\)
+  
+  \begin{solution}
+  \end{solution}
+  
+\item Prove constructively: \(A \lor B \derives \neg (\neg A \land \neg B)\)
+  
+  \begin{solution}
+  \end{solution}
+  
+\item Note that the problems 7 and 8 are converses of each other.  How does this
+  tell us that \(\lor\)Introduction cannot be used as the last step of the proof
+  of \(\neg (\neg A \land \neg B) \derives A \lor B\)?
+  
+  \begin{solution}
+  \end{solution}
+  
+\item Use propositional logic to prove this set-theoretic inclusion: If
+  \(A \subseteq C\) and \(B \subseteq C\) then \(A \cup B \subseteq C\)?
+  
+  \begin{solution}
+  \end{solution}
+  
+\item Use propositional logic to prove this set-theoretic identity:
+  \[
+    A \cap (B \cup C) = (A \cap B) \cup (A \cap C)
+  \]
+  
+  \begin{solution}
+  \end{solution}
+  
+\item State, in your own words, the difference in meanings of
+  \(\Gamma \derives A\) vs. \(\Gamma \Derives A\), where \(\Gamma\) is a set of
+  statements and \(A\) is a statement.
+  
+  \begin{solution}
+  \end{solution}
+  
+\item Using a truth table, determine whether or not
+  \[
+    (A \to B) \to C \Derives (A \land B) \to C.
+  \]
+  
+  \begin{solution}
+  \end{solution}
+  
+\item Show that, in classical logic,
+  \[
+    \Gamma \derives A \text{ if, and only if, } \Gamma \cup \set{\neg A} \derives \bot
+  \]
+  
+  \begin{solution}
+  \end{solution}
+  
+\item Show that, in classical logic,
+  \[
+    \Gamma \Derives A \text{ if, and only if, } \Gamma \cup \set{\neg A} \Derives \bot
+  \]
+  
+  \begin{solution}
+  \end{solution}
+  
 \end{enumerate}
- 
-
 
 \end{document}
