@@ -112,7 +112,7 @@ includeheadfoot
 % metadata commands
 % -----------------
 
-\newcommand{\thecourse}{CS81 (Spring 2018)}
+\newcommand{\thecourse}{CS 81 (Spring 2018)}
 
 % --------------------------
 % pset-specific environments
