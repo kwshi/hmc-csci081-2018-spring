@@ -70,6 +70,11 @@ includeheadfoot
 % natural deduction proofs
 \RequirePackage{logicproof}
 
+% arrays and other table features
+\RequirePackage{array}
+\RequirePackage{booktabs}
+\RequirePackage{tabularx}
+
 % =====
 % hacks
 % =====
