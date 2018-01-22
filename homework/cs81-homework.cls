@@ -113,6 +113,29 @@ includeheadfoot
 \newcommand{\Turnstile}{\vDash}
 \newcommand{\Derives}{\Turnstile}
 
+% logic proof shortcuts
+\newcommand{\elim}[1][]{\mathrm{E_{#1}}}
+\newcommand{\intro}[1][]{\mathrm{I_{#1}}}
+
+\newcommand{\ande}[1][]{\(\land \elim[#1]\)}
+\newcommand{\andi}{\(\land \intro\)}
+
+\newcommand{\ore}{\(\lor \elim\)}
+\newcommand{\ori}[1][]{\(\lor \intro[#1]\)}
+
+\newcommand{\impe}{\({\to} \elim\)}
+\newcommand{\impi}{\({\to} \intro\)}
+
+\newcommand{\bote}{\(\bot \elim\)}
+\newcommand{\boti}{\(\bot \intro\)}
+
+\newcommand{\tope}{\(\top \elim\)}
+\newcommand{\topi}{\(\top \intro\)}
+
+\newcommand{\nege}{\(\neg \elim\)}
+\newcommand{\negi}{\(\neg \intro\)}
+
+
 % -----------------
 % metadata commands
 % -----------------
