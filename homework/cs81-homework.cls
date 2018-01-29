@@ -111,7 +111,7 @@ includeheadfoot
 \newcommand{\turnstile}{\vdash}
 \newcommand{\derives}{\turnstile}
 \newcommand{\Turnstile}{\vDash}
-\newcommand{\Derives}{\Turnstile}
+\newcommand{\entails}{\Turnstile}
 
 % logic proof shortcuts
 \newcommand{\elim}[1][]{\mathrm{E_{#1}}}
