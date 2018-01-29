@@ -146,7 +146,7 @@ includeheadfoot
 % --------------------------
 
 % prelude box
-\newenvironment{introduction}{}{\newpage}
+\newenvironment{introduction}{}{\clearpage}
 
 % solution boxes
 \newenvironment{solution}{\begin{mdframed}}{\end{mdframed}\newpage}
