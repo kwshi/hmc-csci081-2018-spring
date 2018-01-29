@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{math171-pset}[2018/1/18 CS81 homework document class]
+\ProvidesClass{cs81-homework}[2018/1/18 CS81 homework document class]
 
 \LoadClass[10pt]{article}
 
@@ -30,6 +30,13 @@ includeheadfoot
 
 % page headers and footers
 \RequirePackage{fancyhdr}
+
+% urls
+\RequirePackage[hyphens]{url}
+
+% references
+\RequirePackage{hyperref}
+\RequirePackage{fancyref}
 
 % enumerate environment customization
 \RequirePackage{enumitem}
@@ -74,14 +81,6 @@ includeheadfoot
 \RequirePackage{array}
 \RequirePackage{booktabs}
 \RequirePackage{tabularx}
-
-% =====
-% hacks
-% =====
-
-% for referencing labeled equations w/ number in parens
-\let\oldref\ref
-\renewcommand{\ref}[1]{(\oldref{#1})}
 
 % ========
 % commands
@@ -140,14 +139,17 @@ includeheadfoot
 % metadata commands
 % -----------------
 
-\newcommand{\thecourse}{CS 81 (Spring 2018)}
+\newcommand{\thecourse}{CS 81 (Spring 2018) \\ Computability and Logic}
 
 % --------------------------
 % pset-specific environments
 % --------------------------
 
+% prelude box
+\newenvironment{introduction}{}{\newpage}
+
 % solution boxes
-\newenvironment{solution}{\begin{mdframed}}{\end{mdframed}}
+\newenvironment{solution}{\begin{mdframed}}{\end{mdframed}\newpage}
 
 % textbook-style problems; suspect we might never use this
 %\newenvironment{problem}[2]{\section*{Chapter #1: Problem #2}}{\par\hrulefill}
