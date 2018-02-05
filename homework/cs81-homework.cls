@@ -77,10 +77,17 @@ includeheadfoot
 % natural deduction proofs
 \RequirePackage{logicproof}
 
+% proof trees/tableaux
+\RequirePackage{prooftrees}
+\forestset{just refs right}
+
 % arrays and other table features
 \RequirePackage{array}
 \RequirePackage{booktabs}
 \RequirePackage{tabularx}
+
+% margin notes
+\RequirePackage{marginnote}
 
 % ========
 % commands
@@ -134,6 +141,8 @@ includeheadfoot
 \newcommand{\nege}{\(\neg \elim\)}
 \newcommand{\negi}{\(\neg \intro\)}
 
+\newcommand{\note}{\nege}
+\newcommand{\noti}{\negi}
 
 % -----------------
 % metadata commands
@@ -150,6 +159,10 @@ includeheadfoot
 
 % solution boxes
 \newenvironment{solution}{\begin{mdframed}}{\end{mdframed}\newpage}
+
+% problem item command
+\newcommand{\problem}[1]{\item \marginnote{[#1 points]}}
+\reversemarginpar
 
 % textbook-style problems; suspect we might never use this
 %\newenvironment{problem}[2]{\section*{Chapter #1: Problem #2}}{\par\hrulefill}
