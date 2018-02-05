@@ -179,14 +179,14 @@
       [{\derives A, B, (\lnot A \land \lnot B)}, just=\(\lor\) Right Rule:!u
       [{\derives A, B, \lnot A}, just=\(\land\) Right Rule:!u
       [{A \derives A, B}, just=\(\lnot\) Right:!u, close]]
-      [{\derives A, B \lnot B}
+      [{\derives A, B, \lnot B}
       [{B \derives A, B}, just=\(\lnot\) Right:!u, close]]]]]
     \end{prooftree}
   \end{center}
 
   The problem is to construct a sequent calculus proof of
   \[
-    (A \to C) \land (B \to C) \derives (A \land B) \to C.
+    (A \to C) \land (B \to C) \derives (A \lor B) \to C.
   \]
 
   \begin{solution}
