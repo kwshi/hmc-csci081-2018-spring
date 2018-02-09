@@ -1,0 +1,164 @@
+\documentclass{cs81-homework}
+
+\title{Assignment 3}
+\author{}
+\date{2018 February 12 (Monday)}
+
+\begin{document}
+
+\begin{introduction}
+  \theintroduction
+
+  Please help us grade by placing your solutions in the space provided.
+\end{introduction}
+
+Translate the following English statements into predicate logic, assuming \(L\)
+is a binary predicate representing Likes on a domain of people, \(A\) is a unary
+predicate representing whether its argument is an Athlete, and \(M\) is a unary
+predicate representing whether its argument is a Musician.  When we speak of
+first, second, third person, etc. it is possible that any or all could be the
+same person as well; they do not have to be distinct.
+
+\begin{enumerate}
+\item \points{3} Everyone likes some athlete and some musician.
+
+  \begin{solution}
+  \end{solution}
+
+\item \points{3} There is someone who likes a musician who likes every athlete.
+
+  \begin{solution}
+  \end{solution}
+
+\item \points{3} For every pair of people, if the first likes the second, then the
+  second likes the first. (This is called the symmetric property.)
+
+  \begin{solution}
+  \end{solution}
+
+\item \points{3} For every pair of people, if the first likes the second, then the
+  second does not like the first. (This is called the antisymmetric property.)
+
+  \begin{solution}
+  \end{solution}
+
+\item \points{3} For any three people, if the first likes the second, and the
+  second likes the third, then the first likes the third. (This is called the
+  transitive property.)
+
+  \begin{solution}
+  \end{solution}
+
+\item[] Translate the following predicate logic statements into english, with the
+  same assumptions about L, A, and M as previous. Try to make your statements
+  simple and concise.
+  
+\item \points{3} \(\forall x \exists y (L(x, y) \land \lnot L(y, x))\)
+
+  \begin{solution}
+  \end{solution}
+
+\item \points{3} \(\exists x (M(x) \land \forall y (A(y) \to  \lnot L(x, y)))\)
+
+  \begin{solution}
+  \end{solution}
+
+\item \points{3} \(\forall x \forall y (L(x, y) \to  \forall z (L(x, z) \to  L(y, z)))\)
+
+  \begin{solution}
+  \end{solution}
+
+\item \points{3} \(\forall x \forall y (L(x, y) \to  \exists z (L(x, z) \land L (y, z)))\)
+
+  \begin{solution}
+  \end{solution}
+
+\item \points{3} \(\exists x (M(x)  \to  \forall y M(y))\)
+
+  \begin{solution}
+  \end{solution}
+
+\item[] Present an informal argument that the following is valid (evaluates to
+  true) for any interpretation.
+  
+\item \points{5} \((\exists x A(x)) \to  ((\forall x M(x)) \to  (\exists x M(x)))\)
+
+  \begin{solution}
+  \end{solution}
+
+\item[] Present an informal argument that the following is valid (evaluates to
+  true) for any interpretation.
+
+  \begin{solution}
+  \end{solution}
+
+\item \points{5} \((\forall x M(x)) \lor (\exists x \lnot M(x))\)
+
+  \begin{solution}
+  \end{solution}
+
+\item[] Give an interpretation for which the following is not valid. An
+  interpretation with a small domain is preferred. In this counterexample, you
+  should show the domain and interpretation of each predicate explicitly, then
+  argue that the formula evaluates to false (0).
+  
+\item \points{5} \((\forall x M(x)) \lor \lnot \exists x M(x)\)
+
+  \begin{solution}
+  \end{solution}
+
+\item[] Give an interpretation for which the following is not valid. An
+  interpretation with a small domain is preferred. In this counterexample, you
+  should show the domain and interpretation of each predicate explicitly, then
+  argue that the formula evaluates to false (0).
+  
+\item \points{5} \((\exists x A(x)) \to  \forall y A(y)\)
+
+  \begin{solution}
+  \end{solution}
+
+\item[] Give an interpretation for which the following is not valid. An
+  interpretation with a small domain is preferred. In this counterexample, you
+  should show the domain and interpretation of each predicate explicitly, then
+  argue that the formula evaluates to false (0).
+
+\item \points{10} \(((\forall x A(x)) \to  (\forall x M(x))) \to  \forall x (A(x) \to  M(x))\)
+
+  \begin{solution}
+  \end{solution}
+
+\item[] Using JAPE, provide a proof of the following sequent. JAPE requires
+  periods after quantified variables. We include them so that you can scrape the
+  formula into JAPE directly.
+\item \points{15}
+  \((\forall x.(A(x) \to B(x))) \to (\exists x.A(x))\to \exists x.B(x)\)
+  [constructive proof required.]
+
+  \begin{solution}
+  \end{solution}
+
+\item[] Using JAPE, provide a proof of the following sequent. JAPE requires
+  periods after quantified variables. We include them so that you can scrape the
+  formula into JAPE directly.
+
+\item \points{10} \((\forall x.A(x)) \lor \exists x.\lnot A(x)\)
+  
+  [This will be a classical proof, somewhat analogous to LEM.]
+
+  \begin{solution}
+  \end{solution}
+
+\item[] Using JAPE, provide a proof of the following sequent. JAPE requires
+  periods after quantified variables. We include them so that you can scrape the
+  formula into JAPE directly.
+
+\item \points{15}
+  \((\exists x.A(x)) \to \exists x.(\lnot A(x) \lor \forall y.A(y))\)
+  
+  [Classical and tricky. I recommend using problem 17 as a lemma.]    
+
+  \begin{solution}
+  \end{solution}
+
+\end{enumerate}
+\end{document}
