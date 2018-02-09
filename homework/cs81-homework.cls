@@ -155,13 +155,48 @@ includeheadfoot
 % --------------------------
 
 % prelude box
-\newenvironment{introduction}{}{\clearpage}
+\newenvironment{introduction}{}{\newpage}
+\newcommand{\theintroduction}{
+  \paragraph{Notice}
+  When you submit this assignment, you are certifying therewith that you
+  understand and accept the following policy, which applies to all
+  assignments.
+
+  \paragraph{Collaboration Policy}
+  The writeup that you submit must be your own work. You are encouraged to get
+  help from the professor and grutors. You may discuss the problems with
+  classmates, but if you do so, it should be in groups of no more than
+  three. You are not allowed to copy or transcribe solutions from other
+  sources, including the work of other students, the internet, previous
+  solution sets, and images photographed from a whiteboard or
+  blackboard. There is to be no “partnering” where two or more students submit
+  the same writeup. If you get help on a problem, you should say who provided
+  the help on a per-problem basis. Blanket statements such as “worked with
+  John and Mary” are not allowed. Detected infractions may impact your
+  academic career.
+
+  \paragraph{Formatting Policy}
+  All work must be typeset in electronic media and submitted as a single pdf
+  file, one problem on each page as shown in the following pages. Retain this
+  header page. Handwritten and photographed or scanned work is not allowed.
+  Do not use inverse video (light typography on dark background). Do not
+  rotate images.  You will not get credit for difficult-to-read submissions.
+
+  For JAPE proofs take a screenshot of your proof and paste it into the
+  document. For written out proofs, just type into a copy of the Google doc
+  master (not the pdf), or use some other method such as \LaTeX\ if you
+  must. You may scrape formulas and symbols directly from the doc master, or
+  from my page full of symbols that I use throughout the course. Once your
+  document is complete, make a pdf and submit to Gradescope.
+}
 
 % solution boxes
 \newenvironment{solution}{\begin{mdframed}}{\end{mdframed}\newpage}
+\newenvironment{solution*}{\begin{mdframed}}{\end{mdframed}}
 
 % problem item command
-\newcommand{\problem}[1]{\item \marginnote{[#1 points]}}
+\newcommand{\problem}[1]{\item \points{#1}}
+\newcommand{\points}[1]{\marginnote{[#1 points]}}
 \reversemarginpar
 
 % textbook-style problems; suspect we might never use this
