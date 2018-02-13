@@ -1,0 +1,187 @@
+\documentclass{cs81-homework}
+
+\author{}
+\title{Assignment 4}
+\date{2018 February 19 (Mondays)}
+
+\usepackage{prftree}
+
+\begin{document}
+
+\begin{introduction}
+  \theintroduction
+
+  For tableau proofs, it suggested that you use the spreadsheet method. Please
+  remember to turn off the gridlines from the View menu before taking your
+  screenshot for greater readability.
+
+  Once your document is complete, make a pdf and submit to Gradescope.
+
+  Please help us grade by placing your solutions in the spaces provided.
+\end{introduction}
+
+\begin{enumerate}
+\item \points{10} For the following entailment, use the tableau method to either
+  prove that it is valid or construct a counterexample.
+  \[
+    \forall x \, (\exists y \, A(x, y) \to \forall z \, A(z, x)) \entails
+    \forall x \, \forall y \, \forall z \, (A(x, y) \to A(z, x)).
+  \]
+
+  \begin{solution}
+  \end{solution}
+
+\item \points{10} For the following entailment, use the tableau method to either
+  prove that it is valid or construct a counterexample. (Recall that
+  \(\exists x \, \top\) asserts a non-empty domain, and may be used in the
+  tableau to provide a constant.)
+  \[
+    \exists x \, \top \entails \exists x \, (A(x) \to \exists y \, A(y))
+  \]
+
+  \begin{solution}
+  \end{solution}
+
+\item \points{10} For the following entailment, use the tableau method to either
+  prove that it is valid or construct a counterexample.
+  \[
+    \entails \forall x \, (A(x) \to \forall y \, A(y)).
+  \]
+
+  \begin{solution}
+  \end{solution}
+
+\item[\ref{itm:prenex-1} \& \ref{itm:prenex-2}.] Prenex Rules are used to
+  justify movement of quantifiers in predicate logic formulas. These have great
+  applicability in automated reasoning and theorem proving. You should read
+  about the prenex rules here. In this problem, we want to justify only one of
+  the four basic rules:
+  \[
+    A(x) \lor \forall y \, B(y) \implies \forall y \, (A(x) \lor B(y))
+  \]
+  where \(\implies\) means ``replace with'', and \(A(x)\) is a formula not
+  having \(y\) as a free variable.  The justification for this rule involves
+  proving the following two sequents.
+    \begin{enumerate}
+    \item[\ref{itm:prenex-1}.]
+      \(A(x) \lor \forall y \, B(y) \derives \forall y \, (A(x) \lor B(y))\)
+      
+    \item[\ref{itm:prenex-2}.]
+      \(\forall y \, (A(x) \lor B(y)) \derives A(x) \lor \forall y \, B(y)\)
+    \end{enumerate}
+    While the proof of \ref{itm:prenex-1} is straightforward, I found it helpful
+    for \ref{itm:prenex-2} to use a tableau the first time I did it.
+
+    \mbox{}
+
+\item \label{itm:prenex-1} \points{5} Give a natural deduction proof of
+\(A(x) \lor \forall y \, B(y) \derives \forall y \, (A(x) \lor B(y))\).
+
+[Here \(x\) is a free variable on both sides. Treat it as if a constant.]
+
+  \begin{solution}
+  \end{solution}
+
+\item \label{itm:prenex-2} \points{15} Give a natural deduction proof of
+  \(\forall y \, (A(x) \lor B(y)) \derives A(x) \lor \forall y \, B(y)\).
+
+  [Here \(x\) is a free variable on both sides. Treat it as if a constant.]
+
+  \begin{solution}
+  \end{solution}
+
+\item \points{20} As we have seen,
+  \[
+    \exists x \, \forall y \, L(x, y) \derives \forall y \, \exists x \, L(x, y),
+  \]
+  but generally
+  \[
+    \forall y \, \exists x \, L(x, y) \not \derives \exists x \, \forall y \,
+    L(x, y),
+  \]
+  even if we add a premise \(\exists z \, \top\) to ensure a non-empty domain.
+
+  But for the special case where \(L(x, y)\) can be factored as
+  \(A(x) \lor B(y)\), the second direction
+  \(\exists z \, \top, \forall y \, \exists x \, (A(x) \lor B(y)) \derives
+  \exists x \, \forall y (A(x) \lor B(y))\) is provable.
+
+  Show that this is the case by giving a tableau proof.
+
+  \begin{solution}
+  \end{solution}
+
+\item \points{10} Let \(f\) and \(g\) be \(1\)-ary function symbols. Any
+  \(1\)-ary function \(\varphi\) is called one-to-one provided that the
+  following formula is satisfied:
+  \[
+    \forall x \, \forall y \, ((\varphi(x) = \varphi(y)) \to (x = y)).
+  \]
+  Give a tableau proof of the following:
+  \begin{center}
+    If \(f\) and \(g\) are one-to-one, so is the composition of \(f\) with \(g\).
+    In other words, prove this entailment
+  \end{center}
+  \begin{gather*}
+    \forall x \, \forall y \, ((f(x) = f(y)) \to (x = y)), \\
+    \forall x \, \forall y \, ((g(x) = g(y)) \to (x = y)) \\
+    \entails \forall x \, \forall y \, ((f(g(x)) = f(g(y))) \to (x = y)).
+  \end{gather*}
+
+  \begin{solution}
+  \end{solution}
+
+\item \label{itm:group} \points{20} Recall these group axioms from the lecture
+  notes, where \(*\) (group ``multiplication'') is a \(2\)-ary function symbol
+  in infix notation and \(^{-1}\) (group inverse) is a \(1\)-ary function symbol
+  in superscript notation, together with equality rules:
+  \begin{center}
+    \begin{tabular}{|l|l|l|}
+      \hline
+      Associative Rule & \multicolumn{2}{l|}
+                         {GA: \(\forall x \, \forall y \, \forall z \,
+                         (x*y)*z = x*(y*z)\)} \\ \hline
+      Identity Rules & GLI: \(\forall x \, 1*x=x\) & GRI: \(\forall x \, x*1=x\) \\ \hline
+      Inverse Rules & GLV: \(\forall x \, x^{-1} * x = 1\) & GRV: \(\forall x \, x * x^{-1} = 1\) \\ \hline
+    \end{tabular}
+  \end{center}
+  Recall also the following rule for equality and functions:
+  \begin{description}
+  \item[\(=\) Introduction Rule]
+    \[
+      \prftree[r]{\quad (no antecedent)\quad where \(t\) is any term}{t=t}
+    \]
+    
+  \item[\(=\) Elimination Rule]
+    \[
+      \prftree[r]{\quad where \(A(x)\) is any formula}{s=t}{A(s)}{A(t)}
+    \]
+    This allows replacing a term with another term equal to the first.
+
+  \item[Function Equality Rule] (derivable from the \(=\) Elimination Rule)
+    \[
+      \prftree[r]{\quad where \(s_1, s_2, t_1, t_2\) are any terms}{s_1 =
+        t_1}{s_2 = t_2}{s_1*s_2 = t_1*t_2}
+    \]
+  \end{description}
+  Prove that the inverse function \(-1\) is one-to-one using natural deduction,
+  i.e.
+  \[
+    \forall x \, \forall y \, \del{x^{-1} = y^{-1} \to x = y}.
+  \]
+  \textbf{Note}: The purpose of this problem is to exercise the \textbf{form} of
+  a natural deduction proof using axioms and equality rules, rather than the
+  result itself, which is fairly simple.  Try not to skip steps.  As JAPE
+  natural deduction does not include these function symbols, maybe use a
+  spreadsheet or \LaTeX\ for formatting.
+
+  \newpage
+
+\item[\ref{itm:group}.] \points{20} Proof.
+  
+  \begin{solution}
+  \end{solution}
+
+\end{enumerate}
+
+\end{document}
