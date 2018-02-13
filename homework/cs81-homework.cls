@@ -81,6 +81,9 @@ includeheadfoot
 \RequirePackage{prooftrees}
 \forestset{just refs right}
 
+% other proof trees for deduction rules
+\RequirePackage{prftree}
+
 % arrays and other table features
 \RequirePackage{array}
 \RequirePackage{booktabs}
