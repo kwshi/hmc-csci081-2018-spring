@@ -147,6 +147,12 @@ includeheadfoot
 \newcommand{\note}{\nege}
 \newcommand{\noti}{\negi}
 
+\newcommand{\exe}{\(\exists \elim\)}
+\newcommand{\exi}{\(\exists \intro\)}
+
+\newcommand{\fae}{\(\forall \elim\)}
+\newcommand{\fai}{\(\forall \intro\)}
+
 % -----------------
 % metadata commands
 % -----------------
