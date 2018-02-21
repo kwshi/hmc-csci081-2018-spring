@@ -153,6 +153,8 @@ includeheadfoot
 \newcommand{\fae}{\(\forall \elim\)}
 \newcommand{\fai}{\(\forall \intro\)}
 
+\newcommand{\replace}[2]{\([#1/#2]\)}
+
 % -----------------
 % metadata commands
 % -----------------
@@ -197,6 +199,14 @@ includeheadfoot
   must. You may scrape formulas and symbols directly from the doc master, or
   from my page full of symbols that I use throughout the course. Once your
   document is complete, make a pdf and submit to Gradescope.
+  
+  For tableau proofs, it suggested that you use the spreadsheet method. Please
+  remember to turn off the gridlines from the View menu before taking your
+  screenshot for greater readability.
+
+  Once your document is complete, make a pdf and submit to Gradescope.
+
+  Please help us grade by placing your solutions in the spaces provided.
 }
 
 % solution boxes
