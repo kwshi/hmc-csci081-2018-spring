@@ -1,0 +1,124 @@
+\documentclass{cs81-homework}
+
+\title{Assignment 5}
+\author{}
+\date{2018 February 26 (Monday)}
+
+\begin{document}
+
+\begin{introduction}
+  \theintroduction
+\end{introduction}
+
+\begin{enumerate}
+
+\item[] These problems are formal proofs about the natural numbers. Use natural
+  deduction and the axioms of Peano Arithmetic (PA) from class, including
+  induction where needed.  Here \(0\) is the constant symbol and \(1\) is
+  defined as \(0'\), where \('\) is the successor function.
+
+  You may use any results proved in the class slides, but you should cite
+  anything you use by label if possible.  Don't forget to use the \(\forall \)
+  Elimination rule when you plug into those axioms and lemmas.  Cite what you
+  are plugging in, e.g. \([a+b / x]\) means \(a+b\) is being substituted for
+  \(x\).
+  
+\item \points{5} Formally prove, using natural deduction,
+  \[
+    \forall y \: y + 1 = y'.
+  \]
+    
+  \begin{solution}
+  \end{solution}
+
+\item \points{5} Formally prove, using natural deduction,
+  \[
+    \forall y \: 1 \times y = y.
+  \]
+  
+  \begin{solution}
+  \end{solution}
+
+\item \points{10} Formally prove, using natural deduction,
+  \[
+    \forall y \: y \times 1 = y.
+  \]
+
+  \begin{solution}
+  \end{solution}
+
+\item \points{5} (Basis only) Formally prove, using natural deduction, that
+  \(\times\) distributes over \(+\), i.e.
+  \[
+    \forall x \: \forall y \: \forall z \: x \times (y + z) = (x \times y) + (x
+    \times z).
+  \]
+  You may use any results proved in the slides or in previous problems as
+  lemmas.  For this problem, induction is required.  So you will be showing
+  \[
+    \forall x \: A(x) \quad \text{where} \quad A(x)\colon \forall y \: \forall z
+    \: x \times (y + z) = (x \times y) + (x \times z).
+  \]
+  In this problem, only show the basis of the proof.  The induction step is in
+  the next problem.
+  \[
+    A(0)\colon \forall y \: \forall z \: 0 \times (y + z) = (0 \times y) + (0
+    \times z).
+  \]
+
+  \begin{solution}
+  \end{solution}
+
+\item \points{25} (Induction step only) Formally prove, using natural deduction,
+  that \(\times\) distributes over \(+\), i.e.
+  \[
+    \forall x \: \forall y \: \forall z \: x \times (y + z) = (x \times y) + (x \times z).
+  \]
+  You may use any results proved in the slides or in previous problems as lemmas.
+  For this problem, induction is required.  So you will be showing
+  \[
+    \forall x \: A(x) \quad \text{where} \quad A(x)\colon \forall y \: \forall z
+    \: x \times (y + z) = (x \times y) + (x \times z).
+  \]
+  In this problem, only show the induction step: \(A(a) \derives A(a')\), i.e.
+  \[
+    \forall y \: \forall z \: a \times (y + z) = (a \times y) + (a \times z)
+    \derives \forall y \: \forall z \: a' \times (y + z) = (a' \times y) + (a'
+    \times z).
+  \]
+
+  \begin{solution}
+  \end{solution}
+
+\item \points{25} One way to introduce a new predicate symbol representing a
+  concept into a theory is to treat formulas using the symbol as abbreviations
+  for other formulas.  In this problem we define an abbreviation for \(\le\)
+  (less-than-or-equal):
+  
+  For any terms \(s\) and \(t\), \(s \le t\) means \(\exists w \: s+w = t\).
+  
+  For example \(3+2 \le 4+3\) means \(\exists w \: (3+2)+w = (4+3)\).
+        
+  Give a natural deduction proof for the following derived inference rule:
+  \[
+    \prftree[r]{\quad\text{where \(r, s, t\) are any terms.}}{r \le s}{s \le
+      t}{r \le t}.
+  \]
+  (Treat the antecedent formulas as premises, and the consequent as the
+  conclusion. Treat \(r\), \(s\), and \(t\) as if constants.)
+
+  \begin{solution}
+  \end{solution}
+
+\item \points{25} For the \(\le\) symbol defined in the previous problem, prove
+  that \(\le\) is antisymmetric:
+
+  \(\forall x \: \forall y \: ((x \le y) \land (y \le x) \to x = y)\)
+
+  (It might be helpful to invent and prove a lemma.)
+  
+  \begin{solution}
+  \end{solution}
+
+\end{enumerate}
+\end{document}
