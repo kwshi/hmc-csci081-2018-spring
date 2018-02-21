@@ -154,6 +154,7 @@ includeheadfoot
 \newcommand{\fai}{\(\forall \intro\)}
 
 \newcommand{\replace}[2]{\([#1/#2]\)}
+\newcommand{\sub}{\replace}
 
 % -----------------
 % metadata commands
