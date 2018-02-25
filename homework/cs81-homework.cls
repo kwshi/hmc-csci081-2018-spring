@@ -153,6 +153,9 @@ includeheadfoot
 \newcommand{\fae}{\(\forall \elim\)}
 \newcommand{\fai}{\(\forall \intro\)}
 
+\newcommand{\eqe}{\({=}\elim\)}
+\newcommand{\eqi}{\({=}\intro\)}
+
 \newcommand{\replace}[2]{\([#1/#2]\)}
 \newcommand{\sub}{\replace}
 
