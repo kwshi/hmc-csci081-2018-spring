@@ -1,0 +1,253 @@
+\documentclass{cs81-homework}
+
+\title{Assignment 6}
+\author{}
+\date{2018 March 5 (Monday)}
+
+\begin{document}
+
+\begin{introduction}
+  This is the last assignment before the Midterm and Spring Break.
+
+  \theintroduction
+
+  Some problems ask to check your solutions using Prover9/Mace4. In these cases,
+  paste in appropriate screen shots of the solution.  Download Prover9/Mace4
+  here: \url{http://www.cs.unm.edu/~mccune/prover9/download/}.  I've created a
+  quickstart guide to help you.  Also there are examples in the lecture slides.
+
+  When using Mace4, you should use the Reformat menu to reformat to ``cooked''
+  mode for ease in reading.
+\end{introduction}
+
+\begin{enumerate}
+
+\item \points{10} Establish the satisfiability or unsatisfiability of the set of
+  clauses below by the resolution method.  (Extend the table as needed.)  If a
+  set is satisfiable, give an interpretation that satisfies it.
+  
+  \begin{solution}
+    \begin{center}
+      \begin{tabular}{|l||l|l|l|}
+        \hline
+        & Clause & Justification & Prover9 version \\
+        \hline\hline
+        1 & \(p \lor \lnot q \lor \lnot r\) & Given & \\ \hline
+        2 & \(p \lor q \lor \lnot r \lor \lnot s\) & Given & \\ \hline
+        3 & \(p \lor \lnot q \lor r \lor s\) & Given & \\ \hline
+        4 & \(\lnot p \lor \lnot r \lor \lnot s\) & Given & \\ \hline
+        5 & \(\lnot p \lor \lnot q \lor s\) & Given & \\ \hline
+        6 & \(q \lor s\) & Given & \\ \hline
+        7 & \( r \lor \lnot s\) & Given & \\
+        \hline
+      \end{tabular}
+    \end{center}
+  \end{solution}
+  
+\item[] \points{2/10} Once you have proved the statement by hand, check the result
+  using Prover9/Mace4.  (Paste input and output here.)
+
+  \begin{solution}
+  \end{solution}
+  
+\item \points{10} Establish the satisfiability or unsatisfiability of the set of
+  clauses below by the resolution method.  (Extend the tables as needed.)  If a
+  set is satisfiable, give an interpretation that satisfies it.
+
+  \begin{solution}
+    \begin{center}
+      \begin{tabular}{|l||l|l|l|}
+        \hline
+        & Clause & Justification & Prover9 version \\
+        \hline\hline
+        1 & \(\lnot p \lor q \lor r \lor s\) & Given & \\ \hline
+        2 & \(\lnot p \lor \lnot q\) & Given & \\ \hline
+        3 & \(q \lor \lnot s\) & Given & \\ \hline
+        4 & \(\lnot q \lor r\) & Given & \\ \hline
+        5 & \(\lnot r \lor s\) & Given & \\
+        \hline
+      \end{tabular}
+    \end{center}
+  \end{solution}
+  
+\item[] \points{2/10} Once you have proved the statement by hand, check the result
+  using Prover9/Mace4.  (Paste input and output here.)
+
+  \begin{solution}
+  \end{solution}
+  
+\item \points{10} Determine whether the pair of atomic formulas below is
+  unifiable by executing the unification algorithm on them.  Show the values of
+  the set \(P\) and the unifier \(S\) as the algorithm iterates.  (Using a table
+  as in the lecture slides is a good idea.)  If unifiable, give the most general
+  unifier (MGU).  (In each case, the variables have already been renamed apart,
+  so the renaming-apart step is not necessary.)  If not unifiable, state why
+  unification fails.  In unifiable cases, check by direct substitution of the
+  unifier into the formulae.
+  \[
+    \begin{array}{l@{}l@{}l@{}l@{}ll}
+      P( & g(h(x)), & f(h(y)), & y, & x) & \text{vs.} \\
+      P( & g(z), & f(z), & a, & b).
+    \end{array}
+  \]
+
+  \begin{solution}
+  \end{solution}
+  
+\item \points{10} Determine whether the pair of atomic formulae below is
+  unifiable by executing the unification algorithm on them.  Show the values of
+  the set \(P\) and the unifier \(S\) as the algorithm iterates.  (Using a table
+  as in the lecture slides is a good idea.)  If unifiable, give the most general
+  unifier (MGU).  (In each case, the variables have already been renamed apart,
+  so the renaming-apart step is not necessary.)  If not unifiable, state why
+  unification fails.  In unifiable cases, check by direct substitution of the
+  unifier into the formulae.
+
+  \[
+    \begin{array}{l@{}l@{}l@{}l@{}ll}
+      P( & g(h(x)), & f(h(y)), & y, & x) & \text{vs.} \\
+      P( & g(z), & f(z), & h(a), & h(u)).
+    \end{array}
+  \]
+
+  \begin{solution}
+  \end{solution}
+  
+\item \points{5} Try to establish the satisfiability or unsatisfiability of the
+  following set of clauses using resolution.  If a set is satisfiable, give an
+  interpretation that satisfies it.  [Don't forget that variables do not carry
+  across from one clause to another, but constants do.]  (Extend the table as
+  necessary.)
+
+  \begin{solution}
+    \begin{center}
+      \begin{tabular}{|l||l|l|}
+        \hline
+        & Clause & Justification \\
+        \hline\hline
+        1 & \(P(a)\) & Given \\ \hline
+        2 & \(Q(y, x) \lor \lnot P(x)\) & Given \\ \hline
+        3 & \(Q(b, x)\) & Given \\ \hline
+        4 & \(\lnot Q(b, a)\) & Given \\
+        \hline
+      \end{tabular}
+    \end{center}
+  \end{solution}
+  
+\item[] \points{2/10} Once you have proved the statement by hand, check the result
+  using Prover9/Mace4.  (Paste input and output here.)
+
+  \begin{solution}
+  \end{solution}
+  
+\item \points{10} Try to establish the satisfiability or unsatisfiability of the
+  following set of clauses using resolution.  If a set is satisfiable, give an
+  interpretation that satisfies it.  [Don't forget that variables do not carry
+  across from one clause to another, but constants do.]  (Extend the table as
+  necessary.)
+
+  \begin{solution}
+    \begin{center}
+      \begin{tabular}{|l||l|l|}
+        \hline
+        & Clause & Justification \\
+        \hline\hline
+        1 & \(P(a)\) & Given \\
+        2 & \(Q(y, x) \lor \lnot P(x)\) & Given \\
+        3 & \(Q(b, x)\) & Given \\
+        4 & \(\lnot Q(a, b)\) & Given \\
+      \end{tabular}
+    \end{center}
+  \end{solution}
+  
+\item[] \points{2/10} Once you have proved the statement by hand, check the result
+  using Prover9/Mace4.  (Paste input and output here.)
+
+  \begin{solution}
+  \end{solution}
+  
+\item \points{10} Try to establish the satisfiability or unsatisfiability of the
+  following set of clauses using resolution.  If a set is satisfiable, give an
+  interpretation that satisfies it.  [Don't forget that variables do not carry
+  across from one clause to another, but constants do.]  (Extend the table as
+  necessary.)
+
+  \begin{solution}
+    \begin{center}
+      \begin{tabular}{|l||l|l|}
+        \hline
+        & Clause & Justification \\
+        \hline\hline
+        1 & \(Q(a)\) & Given \\
+        2 & \(P(x) \lor \lnot Q(x)\) & Given \\
+        3 & \(\lnot P(x) \lor Q(f(x))\) & Given \\
+      \end{tabular}
+    \end{center}
+  \end{solution}
+  
+\item[] \points{2/10} Once you have proved the statement by hand, check the result
+  using Prover9/Mace4.  (Paste input and output here.)
+
+  \begin{solution}
+  \end{solution}
+  
+\item \points{10} Prove the following sequent by the resolution method.  (Don't
+  forget to negate the conclusion before converting to clausal form.)
+  \[
+    \forall x \: (P(x) \to Q(x)) \derives (\exists x \: P(x)) \to (\exists x \:
+    Q(x)).
+  \]
+
+  \begin{solution}
+  \end{solution}
+  
+\item[] \points{2/10} Once you have proved the statement by hand, check the result
+  using Prover9/Mace4.  (Paste input and output here.)
+
+  \begin{solution}
+  \end{solution}
+  
+\item \points{10} Prove the following sequent by the resolution method.  (Don't
+  forget to negate the conclusion before converting to clausal form.)
+  \[
+    (\exists x \: P(x)) \to (\forall x \: Q(x)) \derives (\forall x \: (P(x) \to
+    Q(x))).
+  \]
+
+  \begin{solution}
+  \end{solution}
+  
+\item[] \points{2/10} Once you have proved the statement by hand, check the result using
+  Prover9/Mace4.  (Paste input and output here.)
+
+  \begin{solution}
+  \end{solution}
+  
+\item \points{10}
+  Translate into predicate logic, then prove using resolution.
+  
+  Premises:
+  \begin{enumerate}
+  \item Every child loves candy.
+  \item Anyone who loves candy is not a health nut.
+  \item Anyone who drinks wheatgrass is a health nut.
+  \item Dale drinks wheatgrass.
+  \end{enumerate}
+  
+  Conclusion:
+  \begin{enumerate}
+  \item Dale is not a child.
+  \end{enumerate}
+
+  \begin{solution}
+  \end{solution}
+  
+\item[] \points{2/10} Once you have proved the statement by hand, check the result
+  using Prover9/Mace4.  (Paste input and output here.)  .
+
+  \begin{solution}
+  \end{solution}
+  
+\end{enumerate}
+
+\end{document}
