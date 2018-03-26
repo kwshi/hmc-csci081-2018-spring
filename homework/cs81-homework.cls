@@ -92,6 +92,20 @@ includeheadfoot
 % margin notes
 \RequirePackage{marginnote}
 
+% code input
+\RequirePackage{listings}
+\lstset{
+  basicstyle=\ttfamily,
+  columns=flexible,
+  keepspaces=true,
+  numbers=none,
+  numbersep=1em,
+  numberstyle=\footnotesize,
+  commentstyle=\color{gray},
+  keywordstyle=\bfseries,
+  stringstyle=\itshape,
+}
+
 % ========
 % commands
 % ========
