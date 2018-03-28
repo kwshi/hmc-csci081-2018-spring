@@ -1,0 +1,127 @@
+\documentclass{cs81-homework}
+
+\title{Assignment 7}
+\date{Monday April 2 at 6:00 PM}
+\author{}
+
+\begin{document}
+
+\begin{introduction}
+  \theintroduction
+
+  \paragraph{Caution:}
+  Do not start on problems 1 and 2 the day of the deadline.  For the first two
+  problems, use the Turing machine simulator that I’ve provided on Piazza:
+  \href{https://docs.google.com/document/d/1DTeea4vqzkiHAo1imlpkXfG87q42BOmHq-jj4yDWGB0/edit}{tm.pro}
+  This is a simulator written in Prolog (\textbf{Pro}gramming in
+  \textbf{Log}ic).
+
+  (You can develop in other simulators such as Jflap if you must, but your
+  submitted code must still be in our model.)
+
+  There are two ways to run the simulator:
+  \begin{enumerate}
+  \item Install a Prolog interpreter/compiler on your computer. swipl is a good
+    choice. I used it to develop this simulator. I prefer to run it inside a
+    text editor (emacs) but it can be run bare, e.g. on the command line.
+  \item Use an online version in a browser.
+    \url{http://rextester.com/l/prolog_online_compiler} seems like a good
+    choice. It is compatible with swipl and is fast.
+    (\href{https://swish.swi-prolog.org/p/vWMPonBw.pl}{swish} is not recommended
+    as it is slow.)
+  \end{enumerate}
+
+\end{introduction}
+
+\begin{enumerate}
+\item \points{40} The \(n^\text{th}\) \underline{triangular number} satisfies
+  the recurrence
+  \begin{align*}
+    t(0) &= 0, \\
+    t(n) &= n + t(n-1) \text{ for } n > 0.
+  \end{align*}
+  Thus \(t(0) = 0\), \(t(1) = 1\), \(t(2) = 3\), \(t(3) = 6\), \(t(4) = 10\),
+  \(t(5) = 15\), etc.
+
+  Design a Turing transducer \textbf{\texttt{tri1}} that behaves as follows:
+
+  Given an initial tape with \(n\) consecutive \(\mathtt 1\)s,
+  \textbf{\texttt{tri1}} modifies the tape to halt with exactly \(t(n)\)
+  consecutive \(\mathtt 1\)s.  Thus, if the initial tape is
+  \[
+    \mathtt{11111}
+  \]
+  then the final tape is
+  \[
+    \mathtt{111111111111111}
+  \]
+  since \(t(5) = 15\).
+
+  Assume the blank symbol is \(\mathtt b\).  You may use other symbols as
+  needed.  Assume that the head is intially at the left character of the input.
+  In the case of \(n=0\), the entire tape will be blank.
+
+  Submit the code for \textbf{\texttt{tri1}} and a trace of
+  \textbf{\texttt{tri1}} running on input \(\mathtt{111}\).  Also show the
+  outputs without tracing for inputs 0 to 6 \(\mathtt 1\)s.
+
+  Here is a test setup you can use (\texttt{resultsInRange} was added to
+  \texttt{tm.pro} at 2:00 PM on Tuesday, March 27, 2018):
+  
+  \lstinputlisting{prolog/homework/1-tri1-test.pro}
+
+  \begin{solution}
+  \end{solution}
+
+\item \points{30} Design a Turing decider \textbf{\texttt{tri2}} that decides
+  the language \(T\) of strings in \(\set 1^\star\) that are triangular numbers.
+  That is,
+  \[
+    T =\set{\varepsilon, \mathtt 1, \mathtt{111}, \mathtt{111111},
+      \mathtt{1111111111}, \mathtt{111111111111111}}
+  \]
+  If an input is an elements of \(T\) then \textbf{\texttt{tri2}} accepts the
+  input, otherwise it rejects the input.
+
+  Submit the code for \textbf{\texttt{tri2}}, a trace of
+  \textbf{\texttt{tri2}} running on input and a trace of
+  \textbf{\texttt{tri2}} running on input .  Also show accepted inputs,
+  without tracing for inputs with lengths in range 0 to 21.
+
+  Here is a testing setup you can use:
+  \lstinputlisting{prolog/homework/2-tri2-test.pro}
+
+  \begin{solution}
+  \end{solution}
+
+\item \points{15} Decidable languages, i.e. languages for which there is a
+  Turing decider, are closed \emph{under intersection}.  This means that, if
+  \(L_1\) and \(L_2\) are decidable, then \(L_1 \cap L_2\) is also decidable.
+  Describe in sufficient detail to be convincing how to construct a Turing
+  decider for \(L_1 \cap L_2\) from Turing deciders for \(L_1\) and \(L_2\).
+  Focus on how the rules for the decider for \(L_1 \cap L_2\) would be
+  constructed.
+
+  \begin{solution}
+  \end{solution}
+
+\item \points{15} Recognizable languages, i.e. languages for which there is a
+  Turing recognizer, are closed \emph{under union}. This means that, if \(L_1\)
+  and \(L_2\) are recognizable, then \(L_1 \cup L_2\) is also recognizable.  Use
+  the Church--Turing thesis to argue why this is true.  Under this thesis, you
+  do not have to give the construction details of a Turing machine. Instead you
+  can just present a convincing informal algorithm for recognizing
+  \(L_1 \cup L_2\).  (Hint: The key issue here is that either of the recognizers
+  for \(L_1\) or \(L_2\) could diverge on an input \(x\).  So if you simply run
+  the machines in one order or the other, then the first one run could diverge
+  while the second one might not.  So it might be concluded that an input string
+  x is not in \(L1 \cup L2\) when in fact it is.  So you must describe how to
+  protect against such divergence.)
+
+  \begin{solution}
+  \end{solution}
+\end{enumerate}
+
+  
+
+\end{document}
