@@ -77,6 +77,9 @@ includeheadfoot
 \RequirePackage[T1]{fontenc}
 \RequirePackage[utf8]{inputenc}
 
+% better fonts
+\RequirePackage{lmodern}
+
 % natural deduction proofs
 \RequirePackage{logicproof}
 
