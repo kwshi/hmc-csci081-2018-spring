@@ -102,9 +102,11 @@ includeheadfoot
 \RequirePackage{listings}
 \lstset{
   basicstyle=\ttfamily,
+  frame=single,
+  numbers=left,
+  breaklines=true,
   columns=flexible,
   keepspaces=true,
-  numbers=none,
   numbersep=1em,
   numberstyle=\footnotesize,
   commentstyle=\color{gray},
