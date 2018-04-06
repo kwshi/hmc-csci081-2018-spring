@@ -1,0 +1,1 @@
+/home/kshi/documents/courses/cs-81-computability-and-logic/homework/cs81-homework.cls
