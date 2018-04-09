@@ -66,6 +66,14 @@ includeheadfoot
 
 % convenient math tools
 \RequirePackage{commath}
+\newcommand{\abr}[1]{\left\langle #1 \right\rangle}
+\renewcommand{\abs}[1]{\left\lvert #1 \right\rvert}
+
+% math breaking
+\RequirePackage{breqn}
+
+% operator stacking
+\RequirePackage{stackrel}
 
 % titling commands
 \RequirePackage{titling}
@@ -82,6 +90,10 @@ includeheadfoot
 
 % natural deduction proofs
 \RequirePackage{logicproof}
+
+% algorithms/pseudocode
+\RequirePackage{algorithmicx}
+\RequirePackage{algpseudocode}
 
 % proof trees/tableaux
 \RequirePackage{prooftrees}
@@ -229,7 +241,8 @@ includeheadfoot
 
 % problem item command
 \newcommand{\problem}[1]{\item \points{#1}}
-\newcommand{\points}[1]{\marginnote{[#1 points]}}
+% \newcommand{\points}[1]{\marginnote{[#1 points]}}
+\newcommand{\points}[1]{[#1 points]\quad\ignorespaces}
 \reversemarginpar
 
 % textbook-style problems; suspect we might never use this
@@ -244,6 +257,7 @@ includeheadfoot
   \fancyhf{}
   \chead{\textbf{\thetitle} \\ \textbf{Due \thedate}}
   \lhead{\textbf{\thecourse}}
+  \rhead{\textbf{Name} \quad\underline{\theauthor} \\}
   \renewcommand{\headrulewidth}{0pt}
   \renewcommand{\footrulewidth}{0pt}
 }
