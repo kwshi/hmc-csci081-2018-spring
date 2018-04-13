@@ -1,0 +1,99 @@
+\documentclass{cs81-homework}
+
+\title{Assignment 10}
+
+\date{Monday April 16 at 6:00 PM}
+
+\author{}
+
+\begin{document}
+
+\begin{introduction}
+  \theintroduction
+\end{introduction}
+
+\begin{enumerate}
+\item \points{20} Two Turing Machines \(M\) and \(N\) are equivalent iff they
+  recognize the same language, i.e. \(L(M) = L(N)\).  Show that the language
+  \[
+    \set{\abr{M, N} \mid \text{\(M\) is equivalent to \(N\)}}
+  \]
+  is neither recognizable nor corecognizable.
+
+  [Hint: Choose \(N\) appropriately for each case (recognizable, corecognizable)
+  and reduce a known unrecognizable problem to the case in question.]
+
+  \begin{solution}
+  \end{solution}
+
+\item \points{10} Show that a language \(L\) is decidable iff it is
+  mapping-reducible to some finite language.
+
+  \begin{solution}
+  \end{solution}
+
+\item \points{10} Show that if \(L\) is a recognizable language, and
+  \(L \le_m L^\complement\) (i.e. \(L\) is \emph{mapping reducible} to its own
+  complement) then \(L\) is decidable.
+
+  \begin{solution}
+  \end{solution}
+
+\item \points{40} Classify each of the language below into one of the
+  categories, and state your reason for the classification:
+  \begin{enumerate}[label=\Roman*.]
+  \item Unrecognizable by Rice's Theorem
+  \item Uncorecognizable by Rice's Theorem
+  \item Rice's theorem doesn't apply, but it is decidable
+  \item Rice's theorem doesn't apply, and it is not decidable
+  \end{enumerate}
+  The languages are (for brevity, we omit ``\(M\) is a Turing machine such
+  that'' in each case):
+  \begin{align*}
+    A &= \set{\abr M \mid \text{\(M\) accepts more than 81 strings}}, \\
+    B &= \set{\abr M \mid \text{\(M\) accepts not more than 81 strings}}, \\
+    C &= \set{\abr M \mid \text{\(M\) has no rejecting control states}}, \\
+    D &= \set{\abr M \mid \text{\(M\) uses no more than \(81\) steps when started on blank tape}}, \\
+    E &= \set{\abr M \mid \text{\(M\) \(\exists x \in \Sigma^\star\),
+        \(M\) uses more than 81 steps when started on \(x\)}}, \\
+    F &= \set{\abr M \mid \text{\(L(M)\) is decidable by some finite-state machine (DFA)}}, \\
+  \end{align*}
+  As usual, \(L(M)\) is the language recognized by Turing machine \(M\).
+
+  \begin{solution}
+  \end{solution}
+
+\item \points{20} Demonstrate by proof of Church's Theorem by converting your
+  Turing machine rules for \texttt{tri1} from a08 into Prover9 clauses for
+  resolution and running it with input tape \texttt{[1, 1, 1, 1]} in Prover9.
+  It is expected that the tape will contain \texttt{[1, 1, 1, 1, 1, 1, 1, 1, 1,
+    1]} (10 \texttt{1}s) when it halts.  Show a second run with a ``damaged''
+  version of the machine that does not halt at all.  (If you didn't have a
+  correct solution for \texttt{tri1}, you may use the one in the provided
+  solutions instead.)
+
+  You may copy the basic simulation clauses from this handout.  You will need to
+  make a few changes:
+  \begin{enumerate}[label=\alph*.]
+  \item The blank symbol on my rules is set up for \texttt{0} as the blank
+    symbol.  You might have used a different symbol for blank, in which case you
+    will have to either edit your rules or mine accordingly.
+
+  \item Instead of listing the rules in brackets as in \texttt{tm.pro}, each
+    rule is a separate clause, of the form \texttt{m(xControl, xRead, yWrite,
+      yControl, yMove).}  ending with a period.  The rule clauses below give an
+    example.
+
+  \item You should not be using any state or tape symbols that begin with the
+    letters \(u, v, w, x, y, z\) as these are recognized as variables in
+    Prover9, and will cause unexpected results.
+
+    \lstinputlisting{prover9/tm.prover9}
+  \end{enumerate}
+  
+  \begin{solution}
+  \end{solution}
+
+\end{enumerate}
+
+\end{document}

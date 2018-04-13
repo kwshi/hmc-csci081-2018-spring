@@ -1,0 +1,49 @@
+% Turing Machine Simulation in Resolution Logic
+
+% This set of rules is for the Busy-Beaver 3-state machine
+% Here 0 is 'blank'.
+% (The halting state h does not count in the 3.)
+
+% Problem-Specific Rules
+m(a, 0, 1, b, r). 
+m(b, 0, 0, c, r). 
+m(c, 0, 1, c, l).
+m(a, 1, 1, h, r). 
+m(b, 1, 1, b, r). 
+m(c, 1, 1, a, l).
+
+% negated conclusion. You will need to insert your input in the second set of brackets.
+
+-reach(s([], a, []), s(x, h, y)).
+
+% End of Problem-Specific Rules
+
+% Transitions of a Turing machine
+% non-move rules:
+m(xControl, xRead, yWrite, yControl, n) ->
+  transition(s(xLeft, xControl, [xRead:xRight]),
+             s(xLeft, yControl, [yWrite:xRight])).
+         
+% right move rules:
+m(xControl, xRead, yWrite, yControl, r) ->
+  transition(s(xLeft,          xControl, [xRead:xRight]),
+             s([yWrite:xLeft], yControl, xRight)).
+         
+% left move rules
+m(xControl, xRead, yWrite, yControl, l) ->
+  transition(s([xFirst:xLeft], xControl, [xRead:xRight]),
+             s(xLeft,          yControl, [xFirst,yWrite:xRight])).
+
+% add more tape on the right:
+transition(s(xLeft, xControl, []), s(xLeft, xControl, [0])).
+
+% add more tape on the left
+transition(s([], xControl, xRight), s([0], xControl, xRight)).
+
+% reachability clauses
+
+reach(x, x).
+
+transition(x, y) & reach(y, z) -> reach(x, z).
+
+x=x. % magic to prevent running out of memory
