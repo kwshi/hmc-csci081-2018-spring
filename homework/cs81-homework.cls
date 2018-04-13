@@ -27,6 +27,7 @@ includeheadfoot
 \RequirePackage{tikz}
 \RequirePackage{pgfplots}
 \RequirePackage{graphicx}
+\usetikzlibrary{positioning, calc, arrows}
 
 % table cell newlines within
 \RequirePackage{makecell}
@@ -236,7 +237,7 @@ includeheadfoot
 }
 
 % solution boxes
-\newenvironment{solution*}{\hrulefill}{}
+\newenvironment{solution*}{\hrulefill\par}{}
 \newenvironment{solution}{\begin{solution*}}{\end{solution*}\newpage}
 
 % problem item command
@@ -271,4 +272,8 @@ includeheadfoot
 }
 \pagestyle{cs81}
 
+% =======
+% styling
+% =======
 
+\renewcommand{\familydefault}{\sfdefault}
