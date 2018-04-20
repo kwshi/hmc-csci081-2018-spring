@@ -44,6 +44,7 @@ includeheadfoot
 
 % enumerate environment customization
 \RequirePackage{enumitem}
+\setenumerate[2]{label=\alph*.}
 
 % for boxed environments
 \RequirePackage{mdframed}
