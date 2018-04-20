@@ -1,0 +1,152 @@
+\documentclass{cs81-homework}
+
+\title{Assignment 11}
+
+\date{Monday April 23 at 6:00 PM}
+
+\author{}
+
+\newcommand{\reverse}{{\text{R}}}
+
+\begin{document}
+
+\begin{introduction}
+  \theintroduction
+\end{introduction}
+
+\begin{enumerate}
+\item \points{20} As shown in lecture, it is possible to construct a DFA with
+  input alphabet \(\set{\mathtt 0, \mathtt 1}\) that decides the language of
+  strings in \(\set{\mathtt 0, \mathtt 1}^\star\) that, when interpreted as
+  binary numerals most-significant bit first, represent numbers divisible by 3.
+  [As a convention, we will take the empty string \(\varepsilon\) to represent
+  number \(0\) as well, even though technically it is not a binary numeral.]
+  \begin{enumerate}
+  \item Describe how for any \(n>0\), the set \(L_n\) of strings of
+    \(\mathtt 0\)'s and \(\mathtt 1\)'s that are binary numerals of numbers
+    divisible by \(n\) is regular (i.e. there is a DFA that decides it.)  [Hint:
+    What is the effect on the modulus of appending an additional \(\mathtt 0\)
+    vs. an additional \(\mathtt 1\)?]
+
+  \item Illustrate your construction by showing the exact rules for \(n=7\).
+
+  \item \label{part:mod-7-dfa} Run your \(\mathop{\bmod} 7\) machine on the
+    simulator \texttt{dfa.pro} and show the output for all input strings of
+    length 7.
+  \end{enumerate}
+  Note: It is \textbf{not} recommended that you use induction on \(n\) here.
+  Instead, describe the state-transitions for any given \(n\) numerically, using
+  arithmetic modulo \(n\).
+
+\item \points{30} \label{problem:reverse} By the reverse \(x^\reverse\) of a string,
+  we mean the string consisting of the same symbols as in \(x\), but in the
+  reverse order.  For example, \(\mathtt{01011}^\reverse = \mathtt{11010}\).  By
+  the reverse of a language \(L\), we mean the language consisting of the
+  reverses of strings in \(L\):
+  \[
+    L^\reverse = \set{x^\reverse \mid x \in L}.
+  \]
+  \begin{enumerate}
+  \item Show by construction that regular languages are closed under reversal,
+    i.e. if \(L\) is regular, then so is \(L^\reverse\).
+
+  \item If \(L\) represents numerals most-significant-bit first, then
+    \(L^\reverse\) represents numerals least-significant-bit first.  Construct
+    the reverse of the \(\mathop{\bmod} 3\) machine presented in the lecture
+    notes.  What is interesting about this example?
+
+  \item Construct the reverse of the \(\mathop{\bmod} 7\) machine from part
+    \ref{part:mod-7-dfa}.  Show the output of the simulator \texttt{dfa.pro} for
+    input strings of length 7.
+  \end{enumerate}
+
+\item \points{10} The reverse \(x^\reverse\) of a string was defined in problem
+  \ref{problem:reverse}.  Show that if \(L\) is regular then so is
+  \[
+    L' = \set{x \in L \mid x^\reverse \in L}.
+  \]
+  \(L'\) is thus the subset of \(L\) such that for any string in the subset, the
+  reverse of the string is also in \(L\).
+
+  For example, if \(L = \set{\mathtt 0, \mathtt{01}}^\star\), then
+  \(L' = \set \varepsilon \cup \set{\mathtt 0} \set{\mathtt 0,
+    \mathtt{10}}^\star\), as
+  \[
+    \begin{array}{r @{\;=\{} l @{\,} l @{\,} l @{\,} l @{\,} l @{\,} l @{\,} l
+        @{\,} l @{\,} l @{\,} l @{\,} l @{\,} l @{,\dots\},}}
+      L & \varepsilon, &\mathtt 0, &\mathtt{00}, &\mathtt{01},
+      &\mathtt{000}, &\mathtt{001}, &\mathtt{010}, &\mathtt{0000}, &\mathtt{0010},
+      &\mathtt{0100}, &\mathtt{0101}, &\mathtt{00000} \\
+      L' && \mathtt 0, &\mathtt{00}, &&\mathtt{000}, &&\mathtt{010},
+      &\mathtt{0000}, &\mathtt{0010}, &\mathtt{0100}, &&\mathtt{00000}
+    \end{array}
+  \]
+  where we've aligned the elements of each to show which are in the subset.
+
+\item \points{10} Consider the language \(T = \set{\mathtt 1^t \mid \text{\(t\)
+      is a triangular number}} = \set{\varepsilon, \mathtt 1, \mathtt{111},
+    \mathtt{111111}, \mathtt{1111111111}, \dots}\)
+  (\(0, 1, 3, 6, 10, 15, \dots\)).  Use the Myhill-Nerode theorem to show that
+  \(T\) is not regular.
+
+\item \points{10} Let \(\Sigma\) and \(\Delta\) be alphabets.  A \emph{string
+    homomorphism} is a function \(h \colon \Sigma^\star \to \Delta^\star\) such
+  that for any \(x \in \Sigma^\star\) there is a string
+  \(h(x) \in \Delta^\star\) as follows:
+
+  For single letters \(\sigma \in \Sigma\), \(h(x) \in \Delta^\star\) is
+  specified as a \emph{base}.  Then for strings:
+  \[
+    h(\sigma_1 \sigma_2 \sigma_3 \dots \sigma_n) = h(\sigma_1) h(\sigma_2)
+    h(\sigma_3) \dots h(\sigma_n), \quad \text{each \(\sigma_i \in \Sigma\)}.
+  \]
+  (For \(n = 0\), \(h(\varepsilon) = \varepsilon\).)
+
+  For example, suppose \(\Sigma = \set{\mathtt a, \mathtt b}\) and
+  \(\Delta = \set{\mathtt 0, \mathtt 1, \mathtt 2}\).  One string homomorphism
+  is given by \(h(\mathtt a) = \mathtt{0112}, h(\mathtt b) = \varepsilon\).
+  Then, for example,
+  \[
+    h(\mathtt{aba}) = \mathtt{0112}\varepsilon\mathtt{0112} = \mathtt{01120112}.
+  \]
+
+  A string homomorphism is applied to an entire language \(L\) as
+  \[
+    h(L) = \set{h(x) \mid x \in L}.
+  \]
+
+  Show that the regular languages are closed under string homomorphism, i.e. if
+  \(L\) is regular, and \(h\) is a string homomorphism, then \(h(L)\) is
+  regular.
+
+  [Suggestion: Maybe use the idea of an NFA.]
+
+\item \points{20} Let \(\Sigma\) and \(\Delta\) be alphabets.  A
+  \emph{substitution} is a function \(h \colon \Sigma \to 2^{\Delta^\star}\)
+  (where \(2^{\Delta^\star}\) is the set of all languages of \(\Delta\)).  That
+  is, for each \(\sigma \in \Sigma\), \(h(\sigma) \subseteq \Delta^\star\), a
+  language.  Then for strings,
+  \[
+    h(\sigma_1 \sigma_2 \sigma_3 \dots \sigma_n) = h(\sigma_1) h(\sigma_2)
+    h(\sigma_3) \dots h(\sigma_n), \quad \text{each \(\sigma_i \in \Sigma\)},
+  \]
+  where the concatenation here is the concatenation of languages rather than
+  strings.  (For \(n = 0\), \(h(\varepsilon) = \set{\varepsilon}\).)
+
+  A substiution is applied to an entire language \(L\) as
+  \[
+    h(L) = \bigcup \set{h(x) \mid x \in L}.
+  \]
+  That is, to get \(h(L)\) for a language, we take the union of \(h\) applied to
+  individual strings in the language.
+
+  A \emph{regular} substitution is one where each \(h(\sigma)\) is a regular
+  language.  Show that a regular substitution applied to a regular langauge
+  results in a regular language.
+
+  [Hint: Maybe use regular expressions.]
+  
+  
+\end{enumerate}
+\end{document}
+  
